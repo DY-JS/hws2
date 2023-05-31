@@ -3,9 +3,13 @@
 }
 
 .hw {
-
+    padding: 0 70px ;
 }
 
-.hwTitle {
 
+.hwTitle {
+    margin-bottom: 37px;
+    padding: 37px 70px 10px;
+    border-top: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
 }
