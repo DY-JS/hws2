@@ -25,7 +25,6 @@ const Greeting: React.FC<GreetingPropsType> = (
         lastUserName,
     } // деструктуризация пропсов
 ) => {
-    // const cnAll = s.button + ' ' + s.all + (filter === 'all' ? ' ' + s.active : '')
     const inputClass = s.input + ' ' + (error !== '' ? ' ' +  s.errorInput  : '') ;
     // need to fix with (?:)
 
