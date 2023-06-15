@@ -14,7 +14,7 @@ const HW4 = () => {
         <div id={'hw4'}>
             <div className={s2.hwTitle}>Homework #4</div>
             {/*демонстрация возможностей компонент:*/}
-            <div className={s2.hw}>cvxfdvdfg
+            <div className={s2.hw}>
                 <Stand />
             </div>
         </div>
