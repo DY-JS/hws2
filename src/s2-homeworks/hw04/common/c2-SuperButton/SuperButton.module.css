@@ -1,16 +1,40 @@
 .button {
-}
-
-.disabled {
-}
-
-.secondary {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    width: 132px;
+    height: 30px;
+    border-radius: 3px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    border: none;
+    cursor: pointer;
 }
 
 .default {
+    color: #FFFFFF;
+    background-color: #0066CC;
 }
 
+.secondary {
+    width: 176px;
+    height: 30px;
+    border: 1px solid #0066CC;
+    color: #0066CC;
+    background-color: #FFF;
+}
 .red {
+    background: #CC1439;
+    color: #FFFFFF;
+;
+}
+.disabled {
+    background: #002E5C ;
+    color:#004D99;
+    opacity: 0.5;
 }
 
 .default:hover {
