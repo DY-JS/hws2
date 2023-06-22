@@ -44,7 +44,7 @@
 
 .link {
     width: max-content;
-    margin-top:  45px;
+    margin-top: 45px;
     cursor: pointer;
     text-decoration: none;
     color: #000;
@@ -57,6 +57,7 @@
     color: #cb29bd;
     text-decoration-line: underline;
 }
+
 .nav a {
 
 }
