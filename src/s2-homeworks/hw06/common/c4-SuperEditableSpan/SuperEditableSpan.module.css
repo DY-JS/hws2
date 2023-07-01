@@ -1,13 +1,13 @@
 .spanBlock {
     display: flex;
     align-items: center;
-    margin-bottom: 22px;
     color: #0080FF;
     font-size: 16px;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    margin-bottom: 22px;
 }
 
 .span {
@@ -17,9 +17,9 @@
 .input {
     display: flex;
     align-items: center;
-    padding-left: 24px;
+    padding: 8px 24px 8px;
     width: 276px;
-    height: 36px;
+    margin-bottom: 22px;
     border: 1px solid #D1D1D1;
 
 }
