@@ -1,8 +1,34 @@
 .container {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
 }
 
 .wrapper {
+display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+
 }
 
 .number {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+}
+
+.wrapper .number:first-of-type {
+    margin-right: 12px;
+}
+
+.wrapper .number:last-of-type {
+    margin-left: 12px;
 }
