@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from 'react'
+import React from 'react'
 import {Slider, SliderProps} from '@mui/material'
 
 interface SuperRangeProps extends SliderProps {
