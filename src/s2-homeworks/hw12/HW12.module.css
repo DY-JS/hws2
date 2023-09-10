@@ -19,5 +19,26 @@ html {
 }
 
 .select {
-
+    width: 171px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #323232;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
+
+.h3 {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 6px;
+}
+
