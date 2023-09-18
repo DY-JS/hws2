@@ -35,43 +35,39 @@ const HW13 = () => {
             .post(url, {success: x})
             .then((res) => {
                 setCode('Код 200!')
-                // setInfo('')
                 setImage(success200)
-                setText('...всё ок)\n' +
-                    'код 200 - обычно означает что скорее всего всё ок)')
+                setText(`...всё ок)`)
+                setInfo(`код 200 - обычно означает что скорее всего всё ок)`)
                 // дописать
 
             })
             .catch((e) => {
                 errorHandler(x)
             })
-            .finally(() => setInfo(''))
     }
 
     const errorHandler = (data?: boolean | null ) => {
         switch (data) {
             case false: {  //false
-                setCode('Код 404!')
+                setCode('500')
                 setImage(error400)
-                setText(`Ты не отправил success в body вообще! 
-                ошибка 400 - обычно означает что скорее всего фронт
-                отправил что-то не то на бэк!`)
+                setText(`эмитация ошибки на сервере`)
+                setInfo(`ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)`)
                 break;
             }
-            case null: { //undefined
-                setCode('Error!')
+            case null: { //null
+                setCode('Error')
                 setImage(errorUnknown)
-                setText(`Network Error
-                        AxiosError`)
+                setText(`Network Error`)
+                setInfo(`AxiosError`)
                 break;
             }
 
-            default: { //null
-                setCode('Код 500!')
+            default: { //undefined
+                setCode('400')
                 setImage(error500)
-                setText(`Ты не отправил success в body вообще! 
-                ошибка 400 - обычно означает что скорее всего фронт
-                отправил что-то не то на бэк!`)
+                setText(`Ты не отправил success в body вообще!`)
+                setInfo(`ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!`)
                 break;
             }
         }
@@ -87,7 +83,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        disabled={!!info}
+                        disabled={info==='...loading'}
 
                     >
                         Send true
@@ -96,16 +92,16 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        disabled={!!info}
+                        disabled={info==='...loading'}
 
                     >
                         Send false
                     </SuperButton>
                     <SuperButton
                         id={'hw13-send-undefined'}
-                        onClick={send(undefined)}
+                        onClick={send()}
                         xType={'secondary'}
-                        disabled={!!info}
+                        disabled={info==='...loading'}
 
                     >
                         Send undefined
@@ -114,7 +110,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        disabled={!!info}
+                        disabled={info==='...loading'}
 
                     >
                         Send null
