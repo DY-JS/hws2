@@ -1,19 +1,40 @@
 .buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    min-width: 500px;
 }
 
 .responseContainer {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    padding-left: 167px
 }
 
 .imageContainer {
+    flex: 50%;
 }
 
 .image {
 }
 
 .textContainer{
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
 }
 
 .code {
+    font-size: 30px;
 }
 
 .text {
