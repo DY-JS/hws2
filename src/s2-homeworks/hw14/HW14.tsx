@@ -47,7 +47,7 @@ const HW14 = () => {
         setFind(value)
         // добавить/заменить значение в квери урла
         const params = new URLSearchParams(searchParams)
-        params.set('find', find)
+        params.set('find', value)
         setSearchParams(params)
     }
 
