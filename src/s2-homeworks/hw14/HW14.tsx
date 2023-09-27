@@ -19,9 +19,9 @@ const getTechs = (find: string) => {
             'https://samurai.it-incubator.io/api/3.0/homework/test2',
             {params: {find}}
         )
-         .catch((e) => {
+        .catch((e) => {
             alert(e.response?.data?.errorText || e.message)
-         })
+        })
 }
 
 const HW14 = () => {
