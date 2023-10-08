@@ -5,6 +5,7 @@ import axios from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
+import {Loader} from "../../s2-homeworks/hw10/Loader";
 
 /*
 * 1 - дописать SuperPagination
@@ -51,36 +52,52 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
-                // делает студент
-
-                // сохранить пришедшие данные
-
-                //
+                if (res) {
+                    setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
+                    setLoading(false)
+                }
             })
+            .finally(() => setLoading(false))
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
-        // делает студент
+        const params = new URLSearchParams(searchParams)
 
-        // setPage(
-        // setCount(
-
-        // sendQuery(
-        // setSearchParams(
-
+      //params.set('sort', sort)
+        params.set('page', String(newPage))
+        params.set('count', String(newCount))
+        setSearchParams(params)
+        setPage(newPage)
+        setCount(newCount)
+        sendQuery(params)
+        // если передать page, без других параметров, то нужно заморочиться
+        // const pageQuery: {page?: string } = newPage !== 1 ? {page: newPage + ''} : {}
+        // const countQuery: {count?: string } = newCount !== 4 ? {count: newCount + ''} : {}
+        // const {count, page, ...lastQueries} = Object.fromEntries(searchParams)
         //
+        // const allQuery = {...lastQueries, ...pageQuery, ...countQuery}
+        // sendQuery(allQuery)
+        // setSearchParams(allQuery)
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
+        setPage(1)
+        setSort(newSort)
+        //если сбросится сортировка - передаём в сортировку пустой объект
+        const sortQuery: {sort?: string } = newSort !== '' ? {sort: newSort} : {}
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        const {sort, page, count, ...lastQueries} = Object.fromEntries(searchParams)
 
-        // sendQuery(
-        // setSearchParams(
-
-        //
+        const allQuery = { ...lastQueries, ...sortQuery} //так мы исключаем page из запроса
+        sendQuery(allQuery)
+        // const params = new URLSearchParams(searchParams)
+        // params.set('page', String(page))
+        // params.set('count', String(count))
+        setSearchParams(allQuery)
+         // при сортировке сбрасывать на 1 страницу
+        //onChangePagination(1, count) -
     }
 
     useEffect(() => {
@@ -107,7 +124,7 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+                {idLoading && <div id={'hw15-loading'} className={s.loading}><Loader/></div>}
 
                 <SuperPagination
                     page={page}

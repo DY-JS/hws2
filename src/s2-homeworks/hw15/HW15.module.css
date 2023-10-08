@@ -1,5 +1,6 @@
 .tech {
     width: 50vw;
+
 }
 
 .developer {
@@ -7,11 +8,12 @@
 }
 
 .techHeader {
+    display: flex;
     width: 50vw;
 }
 
 .developerHeader {
-
+    display: flex;
 }
 
 .row {
@@ -20,8 +22,28 @@
 
 .rowHeader {
     display: flex;
+    align-items: center;
+    padding: 0 17px;
+    height: 36px;
+    background: #E5E5E5;
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize
 }
 
 .loading {
-
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
